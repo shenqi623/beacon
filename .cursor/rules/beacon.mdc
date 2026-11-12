@@ -1,0 +1,14 @@
+---
+description: Beacon 项目开发规则
+alwaysApply: true
+---
+
+- 开始任何任务前先阅读 `docs/SPEC.md`，以它为准。需求和 SPEC 冲突时，先指出冲突再动手，不要自行决定。
+- 一次只做 SPEC 第 7 节中的一项，完成后总结改动并停下，等待确认。
+- 正式运行时为 Tauri + Rust 后端 + Vue 前端；不要把 Node `server/` 当作正式后端继续扩展功能。
+- 所有可配置项必须进可视化配置界面，不要要求用户手改 `.env`。
+- 不确定某个 Google API 的方法名或字段名时，明确说出来，不要编造。
+- 认证方式固定为 OAuth Refresh Token，不要引入服务账号。
+- 每一步都要先检查资源是否已存在，保证重复执行不会重复创建。
+- Client Secret、Refresh Token 不能出现在前端完整回传、代码仓库、日志或接口返回内容中。
+- 不要修改 `scripts/get-token.js`（遗留脚本；正式授权走应用内「授权登录」）。

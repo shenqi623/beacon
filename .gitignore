@@ -1,0 +1,54 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
+
+# Secrets and local data
+.env
+data/
+release/
+*.db
+*.db-shm
+*.db-wal
+
+# Temp / debug scripts
+tmp_*.py
+tmp_*.js
+tmp_*.ts
+*.tmp
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+*.tsbuildinfo
+.eslintcache
+
+# Cypress / Vitest
+/cypress/videos/
+/cypress/screenshots/
+__screenshots__/
+
+# Vite
+*.timestamp-*-*.mjs
+
+# Rust / Tauri
+src-tauri/target/
+src-tauri/gen/schemas/
