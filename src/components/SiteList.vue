@@ -218,14 +218,23 @@ watch(
   display: flex;
   flex-direction: column;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 10px;
   background: transparent;
   overflow: hidden;
+  transition:
+    border-color 0.14s ease,
+    background 0.14s ease,
+    box-shadow 0.14s ease;
+}
+
+.row:hover:not(.selected) {
+  background: rgb(21 27 40 / 2.5%);
 }
 
 .row.selected {
-  border-color: #c8d9fb;
-  background: var(--primary-soft);
+  border-color: #c4d6fb;
+  background: linear-gradient(180deg, #f4f8ff 0%, var(--primary-soft) 100%);
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 .row-main {
@@ -266,7 +275,8 @@ watch(
 }
 
 .domain {
-  font-weight: 600;
+  font-weight: 650;
+  letter-spacing: -0.01em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -331,22 +341,27 @@ watch(
   margin: 6px 6px 6px 0;
   padding: 0;
   border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--surface);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fff 0%, var(--surface) 100%);
   color: var(--primary);
   font: inherit;
   font-size: 11px;
   line-height: 1.1;
   cursor: pointer;
+  transition:
+    background 0.14s ease,
+    border-color 0.14s ease,
+    color 0.14s ease;
 }
 
 .row.selected .progress-toggle {
   background: #fff;
-  border-color: #c8d9fb;
+  border-color: #c4d6fb;
 }
 
 .progress-toggle:hover {
-  background: var(--surface-muted);
+  background: var(--surface-hover);
+  border-color: #aeb7c8;
   color: var(--text);
 }
 

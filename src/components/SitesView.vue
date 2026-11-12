@@ -145,13 +145,19 @@ onBeforeUnmount(() => clearTimeout(pollTimer))
   display: grid;
   place-content: center;
   gap: 6px;
-  padding: 24px;
+  padding: 28px 24px;
   text-align: center;
   overflow: auto;
+  color: var(--text-muted);
+  background:
+    radial-gradient(420px 180px at 50% 30%, rgb(11 87 208 / 5%), transparent 70%),
+    var(--surface);
 }
 
 .empty-title {
-  font-weight: 600;
+  font-weight: 650;
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 @media (min-height: 900px) {

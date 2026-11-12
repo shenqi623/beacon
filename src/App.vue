@@ -83,32 +83,34 @@ const pageDesc = computed(() => {
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   height: 100%;
-  background: var(--bg);
+  background: transparent;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  background: var(--sidebar);
+  background: color-mix(in srgb, var(--sidebar) 88%, #fff);
   border-right: 1px solid var(--sidebar-border);
   padding: 14px 10px 12px;
   min-height: 0;
+  backdrop-filter: blur(10px);
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 4px 8px 16px;
+  padding: 4px 8px 18px;
 }
 
 .brand-mark {
   width: 28px;
   height: 28px;
-  border-radius: 7px;
+  border-radius: 8px;
   background:
     radial-gradient(circle at 50% 50%, #fff 0 2.5px, transparent 3.5px),
-    linear-gradient(145deg, #3b82f6 0%, #0b57d0 100%);
+    linear-gradient(145deg, #4f8ff7 0%, #0b57d0 100%);
+  box-shadow: 0 4px 10px rgb(11 87 208 / 22%);
   flex: none;
 }
 
@@ -120,8 +122,8 @@ const pageDesc = computed(() => {
 
 .brand-name {
   font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 720;
+  letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
@@ -133,38 +135,43 @@ const pageDesc = computed(() => {
 
 .nav {
   display: grid;
-  gap: 2px;
+  gap: 4px;
   flex: 1;
   min-height: 0;
   align-content: start;
 }
 
 .nav-item {
+  position: relative;
   display: grid;
   gap: 1px;
   width: 100%;
   text-align: left;
-  padding: 9px 10px;
+  padding: 9px 10px 9px 12px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
   background: transparent;
   color: var(--text);
   cursor: pointer;
-  transition: background 0.12s;
+  transition:
+    background 0.14s ease,
+    color 0.14s ease,
+    box-shadow 0.14s ease;
 }
 
 .nav-item:hover {
-  background: rgb(0 0 0 / 4%);
+  background: rgb(21 27 40 / 4%);
 }
 
 .nav-item.active {
-  background: var(--accent-soft);
+  background: linear-gradient(90deg, #edf3ff 0%, var(--accent-soft) 100%);
   color: var(--accent);
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 .nav-label {
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .nav-hint {
@@ -198,21 +205,22 @@ const pageDesc = computed(() => {
 
 .page-header {
   flex: none;
-  padding: 14px 20px 8px;
-  border-bottom: 1px solid transparent;
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid rgb(219 225 234 / 55%);
 }
 
 .page-title {
   font-size: 18px;
-  font-weight: 650;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .page-desc {
-  margin-top: 2px;
-  font-size: 12px;
+  margin-top: 3px;
+  font-size: 12.5px;
   color: var(--text-muted);
+  line-height: 1.4;
 }
 
 .page-body {
