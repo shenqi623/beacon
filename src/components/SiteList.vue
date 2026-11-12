@@ -232,8 +232,8 @@ watch(
 }
 
 .row.selected {
-  border-color: #c4d6fb;
-  background: linear-gradient(180deg, #f4f8ff 0%, var(--primary-soft) 100%);
+  border-color: var(--accent-border);
+  background: linear-gradient(180deg, #f2faf8 0%, var(--primary-soft) 100%);
   box-shadow: inset 3px 0 0 var(--accent);
 }
 
@@ -356,7 +356,7 @@ watch(
 
 .row.selected .progress-toggle {
   background: #fff;
-  border-color: #c4d6fb;
+  border-color: var(--accent-border);
 }
 
 .progress-toggle:hover {
@@ -387,7 +387,7 @@ watch(
 }
 
 .row.selected .progress-panel {
-  border-top-color: #c8d9fb;
+  border-top-color: var(--accent-border);
 }
 
 .progress-loading {

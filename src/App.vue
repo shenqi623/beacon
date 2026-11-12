@@ -109,8 +109,8 @@ const pageDesc = computed(() => {
   border-radius: 8px;
   background:
     radial-gradient(circle at 50% 50%, #fff 0 2.5px, transparent 3.5px),
-    linear-gradient(145deg, #4f8ff7 0%, #0b57d0 100%);
-  box-shadow: 0 4px 10px rgb(11 87 208 / 22%);
+    linear-gradient(145deg, #2dd4bf 0%, #0f766e 100%);
+  box-shadow: 0 4px 10px rgb(15 118 110 / 22%);
   flex: none;
 }
 
@@ -164,7 +164,7 @@ const pageDesc = computed(() => {
 }
 
 .nav-item.active {
-  background: linear-gradient(90deg, #edf3ff 0%, var(--accent-soft) 100%);
+  background: linear-gradient(90deg, #eef8f6 0%, var(--accent-soft) 100%);
   color: var(--accent);
   box-shadow: inset 3px 0 0 var(--accent);
 }
@@ -180,7 +180,7 @@ const pageDesc = computed(() => {
 }
 
 .nav-item.active .nav-hint {
-  color: rgb(11 87 208 / 72%);
+  color: rgb(15 118 110 / 72%);
 }
 
 .sidebar-foot {

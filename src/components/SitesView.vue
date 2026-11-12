@@ -150,7 +150,7 @@ onBeforeUnmount(() => clearTimeout(pollTimer))
   overflow: auto;
   color: var(--text-muted);
   background:
-    radial-gradient(420px 180px at 50% 30%, rgb(11 87 208 / 5%), transparent 70%),
+    radial-gradient(420px 180px at 50% 30%, rgb(15 118 110 / 6%), transparent 70%),
     var(--surface);
 }
 
