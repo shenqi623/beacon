@@ -125,7 +125,7 @@ async function run(action: 'create' | 'preview') {
               <span class="choice-title">出站链接</span>
               <input v-model="trackOutbound" type="checkbox" />
             </span>
-            <span class="choice-desc">点到外站 → <code>outbound_click</code></span>
+            <span class="choice-desc">点到外站 → <code>apk_download</code></span>
           </label>
           <label class="choice" :class="{ 'choice-on': trackForm }">
             <span class="choice-top">

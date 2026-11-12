@@ -11,10 +11,10 @@ const ADMIN_API: &str = "https://analyticsadmin.googleapis.com/v1beta";
 const WEBMASTERS_API: &str = "https://www.googleapis.com/webmasters/v3";
 
 const TAG_CLICK: &str = "Beacon - click";
-const TAG_OUTBOUND: &str = "Beacon - outbound_click";
+const TAG_OUTBOUND: &str = "Beacon - apk_download";
 const TAG_FORM: &str = "Beacon - form_submit";
 const EVENT_CLICK: &str = "click";
-const EVENT_OUTBOUND: &str = "outbound_click";
+const EVENT_OUTBOUND: &str = "apk_download";
 const EVENT_FORM: &str = "form_submit";
 
 fn encode_component(s: &str) -> String {
@@ -167,7 +167,7 @@ async fn check_gtm_live(
     missing.push("click");
   }
   if site.outputs.track_outbound && !has_event_tag(&tags, TAG_OUTBOUND, EVENT_OUTBOUND) {
-    missing.push("outbound_click");
+    missing.push("apk_download");
   }
   if site.outputs.track_form && !has_event_tag(&tags, TAG_FORM, EVENT_FORM) {
     missing.push("form_submit");

@@ -82,7 +82,7 @@
 | 1. 创建 GTM 容器 | 在指定 GTM 账号下创建 Web 容器，名称为站点名称 | Tag Manager API v2 `accounts.containers.create`（usageContext: web） | 容器 ID、GTM ID（publicId） |
 | 2. 创建 GA4 属性 | 在指定 GA 账号下创建属性，使用默认时区和币种 | Analytics Admin API `properties.create` | 属性 ID |
 | 3. 创建数据流 | 创建 Web 数据流，网址为 `https://{域名}` | Analytics Admin API `properties.dataStreams.create`（WEB_DATA_STREAM） | 衡量 ID（G-XXXX） |
-| 4. 发布 GTM | 新建/复用工作区 → 添加 Google tag（类型 `googtag`，`tagId` = 衡量 ID，触发器所有页面 `2147479553`）→ **先启用监听所需内置变量（失败则整步失败）** → 按站点勾选幂等创建点击 / 出站 / 表单的触发器与 GA4 事件标签（`gaawe`，事件名分别为 `click` / `outbound_click` / `form_submit`，含 Click/Form 参数与出站过滤）→ 创建版本 → 发布；线上已有 Google 代码且所选监听标签均已存在则跳过。启用内置变量的空 POST 可直连重试（减轻代理导致的 411） | Tag Manager API v2 `workspaces.*`（triggers / tags / built_in_variables / create_version）、`versions.publish` | 版本 ID |
+| 4. 发布 GTM | 新建/复用工作区 → 添加 Google tag（类型 `googtag`，`tagId` = 衡量 ID，触发器所有页面 `2147479553`）→ **先启用监听所需内置变量（失败则整步失败）** → 按站点勾选幂等创建点击 / 出站 / 表单的触发器与 GA4 事件标签（`gaawe`，事件名分别为 `click` / `apk_download` / `form_submit`，含 Click/Form 参数与出站过滤）→ 创建版本 → 发布；线上已有 Google 代码且所选监听标签均已存在则跳过。启用内置变量的空 POST 可直连重试（减轻代理导致的 411） | Tag Manager API v2 `workspaces.*`（triggers / tags / built_in_variables / create_version）、`versions.publish` | 版本 ID |
 | 5. 等待部署 | 展示代码片段，等待网站部署并检测通过 | 无（抓取站点首页） | — |
 | 6. 验证 GSC | 获取验证令牌后执行验证，验证方式 `TAG_MANAGER`，资源类型 `SITE`，标识为 `https://{域名}/` | Site Verification API `webResource.getToken`、`webResource.insert` | 验证成功 |
 | 7. 加入 GSC | 添加网址前缀资源，并提交 sitemap | Search Console API `sites.add`、`sitemaps.submit` | — |

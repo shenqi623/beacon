@@ -99,7 +99,7 @@ pub fn build_site_plan(
       "Tag Manager triggers.create + tags.create",
       params_map(&[
         ("trigger", "linkClick / Beacon - Outbound（Click URL 不含本站域名）".into()),
-        ("tag", "gaawe event=outbound_click".into()),
+        ("tag", "gaawe event=apk_download".into()),
       ]),
     ));
   }

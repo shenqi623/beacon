@@ -12,11 +12,11 @@ const TRIGGER_CLICK: &str = "Beacon - All Clicks";
 const TRIGGER_OUTBOUND: &str = "Beacon - Outbound";
 const TRIGGER_FORM: &str = "Beacon - Form Submit";
 const TAG_CLICK: &str = "Beacon - click";
-const TAG_OUTBOUND: &str = "Beacon - outbound_click";
+const TAG_OUTBOUND: &str = "Beacon - apk_download";
 const TAG_FORM: &str = "Beacon - form_submit";
 
 const EVENT_CLICK: &str = "click";
-const EVENT_OUTBOUND: &str = "outbound_click";
+const EVENT_OUTBOUND: &str = "apk_download";
 const EVENT_FORM: &str = "form_submit";
 
 #[derive(Debug, Clone)]
